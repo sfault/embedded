@@ -1,0 +1,29 @@
+@ hello.S: Hello world! in assembly
+@
+@ Authors: Group Member 1 <email address>
+@          Group Member 2 <email address>
+@ Date:    Oct 12 2013
+
+#include <bits/swi.h>
+	
+	.file	"hello.S"
+	.text
+	.align 2
+
+hello_str:
+	.string	"Hello world!\n" @ print Hello world!
+	.set	hello_size, .-hello_str
+	.text
+	.align	2
+
+	.global	_start
+
+_start:
+	
+	ldr	r0, =hello_str
+	mov 	r1, #13
+	swi	WRITE_SWI
+
+	mov	r0, #0
+	b	EXIT_SWI
+
