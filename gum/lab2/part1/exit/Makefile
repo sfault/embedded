@@ -1,27 +1,27 @@
-CC      = arm-linux-gcc
-OBJCOPY = arm-linux-objcopy
+CC      = gcc
+OBJCOPY = objcopy
 ASFLAGS = -nostdinc -I ../libc/include
 LDFLAGS = -nostdlib -Wl,-Ttext,$(LOAD_ADDR) 
 
 LOAD_ADDR = 0xa2000000
 
-objects = hello.o
+objects = exit.o
 
-default: hello.bin
+default: exit.bin
 
 .PHONY: default clean clobber
 
-hello.bin: hello
+exit.bin: exit
 	$(OBJCOPY) -O binary $< $@
 
-hello: $(objects)
+exit: $(objects)
 	$(CC) $(LDFLAGS) -o $@ $^
 
 %.o: %.S
 	$(CC) -c $(ASFLAGS) -o $@ $<
 
 clean:
-	rm -f hello $(objects)
+	rm -f exit $(objects)
 
 clobber: clean
-	rm -f hello.bin
+	rm -f exit.bin

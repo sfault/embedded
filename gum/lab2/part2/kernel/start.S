@@ -1,6 +1,8 @@
 @ start.S: Kernel startup routine
 @
-@ Author: Mike Kasick <mkasick@andrew.cmu.edu>
+@ Author: Krish Chainani <kchainan>
+@         Akshay Gandhi  <akshayrg>
+@         Ara Macasaet	 <lmacasae>
 @ Date:   Tue, 23 Oct 2007 11:20:33 -0400
 
 	.file	"start.S"

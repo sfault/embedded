@@ -3,12 +3,6 @@
 #ifndef BITS_ERRNO_H
 #define BITS_ERRNO_H
 
-#include <bits/errno.h>
-
-extern unsigned stack_p;
-extern unsigned link_r;
-
-
 #define	EPERM		 1	/* Operation not permitted */
 #define	ENOENT		 2	/* No such file or directory */
 #define	ESRCH		 3	/* No such process */

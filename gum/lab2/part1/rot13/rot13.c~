@@ -1,5 +1,5 @@
-/* 
- *rot13.c: ROT13 cipher test application
+/*
+ * rot13.c: ROT13 cipher test application
  *
  * Authors: Krish Chainani kchainan@andrew.cmu.edu
  *          Akshay Gandhi (akshayrg@andrew.cmu.edu)
@@ -19,11 +19,10 @@ int main(int argc, char *argv[])
 	int * t = (int *)*argv;
 	
 	int arg_count = 0;
-	//write(STDOUT_FILENO, argv[0], BUF_SIZE);
 	for(arg_count=0 ; arg_count<argc ; arg_count++)
 	{
 		write(STDOUT_FILENO,(void *)*(t+arg_count), 8);
-	} 
+	}
 	char *input_string = argv[0];
 	int string_length = 0, read_length = 0, write_length = 0;
 	char last_checker='\0'; // Last character checker
@@ -56,4 +55,5 @@ int main(int argc, char *argv[])
 	}
 	return 0;
 }
+
 

@@ -1,6 +1,6 @@
-CC      = arm-linux-gcc
-AR      = arm-linux-ar
-CFLAGS  = -g -ffreestanding -Wall -Werror -nostdinc -I include
+CC      = gcc
+AR      = ar
+CFLAGS  = -O2 -ffreestanding -Wall -Werror -nostdinc -I include
 ASFLAGS = -nostdinc -I include
 
 objects = errno.o exit.o read.o write.o
