@@ -1,14 +1,20 @@
-/** @file crt0.S
- *
- * @brief Execution startup routine
- *
- * @author Mike Kasick <mkasick@andrew.cmu.edu>
- * @date   Sun, 07 Oct 2007 01:51:29 -0400
- */
+@ crt0.S: Execution startup routine
+@
+@ Authors: Krish Chainani kchainan@andrew.cmu.edu
+@          Akshay Gandhi akshayrg@andrew.cmu.edu
+@	   Ara Macasaet lmacasae@andrew.cmu.edu
+@ Date:    Oct 12 2013 12:35
 
-#include <asm.h>
+	.file	"crt0.S"
+	.text
 
-	.file "crt0.S"
+	.global	_start
 
-FUNC(_start)
-	@ needs code.  Put your names at the top.
+_start:
+	STMFD	sp!, {r0-r12, lr}
+	LDR 	r0, [sp] @ Puts argc to r0
+	ADD     r1, sp, #4 @ Points r1 to argv[0]
+	
+	bl 	main @ Calls main
+	b	exit @ Exits
+
